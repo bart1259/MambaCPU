@@ -1,0 +1,38 @@
+{
+    "DESIGN_NAME": "register_file",
+    "VERILOG_FILES": [
+        "dir::../../src/register_file/register_file.v"
+    ],
+    "CLOCK_PORT": "clk",
+    "CLOCK_PERIOD": 25.0,
+    "FP_PDN_MULTILAYER": false,
+    "FP_SIZING": "absolute",
+    "DIE_AREA": "0 0 425 425",
+    "FP_CORE_UTIL": 50.0,
+    "VDD_PIN": "vccd1",
+    "GND_PIN": "vssd1",
+    "VDD_NETS": [
+        "vccd1"
+    ],
+    "GND_NETS": [
+        "vssd1"
+    ],
+
+    "RUN_KLAYOUT_XOR": false,
+    "RUN_LINTER": false,
+    "RUN_TAP_ENDCAP_INSERTION": true,
+    "RUN_FILL_INSERTION": true,
+    "RUN_POST_GRT_DESIGN_REPAIR": true,
+    "RUN_ANTENNA_CHECK": true,
+    "GRT_ANTENNA_ITERS": 10,
+    "GRT_ANTENNA_MARGIN": 15,
+    "RUN_HEURISTIC_DIODE_INSERTION": true,
+    "RUN_MAGIC_DRC": false,
+    "MAGIC_DRC_USE_GDS": false,
+    "ERROR_ON_MAGIC_DRC": false,
+    "MAX_TRANSITION_CONSTRAINT": 1.5,
+    "DESIGN_REPAIR_MAX_SLEW_PCT": 50,
+    "DESIGN_REPAIR_MAX_CAP_PCT": 30,
+    "DEFAULT_CORNER": "max_ss_100C_1v60",
+    "FP_PIN_ORDER_CFG": "dir::pins.cfg"
+}

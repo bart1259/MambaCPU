@@ -1,0 +1,107 @@
+{
+    "DESIGN_NAME": "cpu_core",
+    "VERILOG_FILES": [
+        "dir::../src/cpu_core/cpu_core.v",
+        "dir::../src/alu/alu.v",
+        "dir::../src/register_file/register_file.v",
+        "dir::../src/memory/memory_controller.v",
+        "dir::../src/synchronizer/master_requester.v",
+        "dir::../src/synchronizer/two_flop_sync.v"
+    ],
+    "VERILOG_FILES_BLACKBOX": "dir::../src/memory/sky130_sram_1kbyte_1rw1r_32x256_8.bb.v",
+    "CLOCK_PORT": "clk",
+    "CLOCK_PERIOD": 25.0,
+    "FP_PDN_MULTILAYER": true,
+
+    "FP_SIZING": "absolute",
+    "DIE_AREA": "0 0 1500 2000",
+    "FP_CORE_UTIL": 50.0,
+    "VDD_NETS": "vccd1",
+    "GND_NETS": "vssd1",
+    "FP_PIN_ORDER_CFG": "dir::pins.cfg",
+    "PDN_MACRO_CONNECTIONS": "mem_ctrl.l1_0 vccd1 vssd1 vccd1 vssd1, mem_ctrl.l1_1 vccd1 vssd1 vccd1 vssd1, mem_ctrl.l1_2 vccd1 vssd1 vccd1 vssd1, mem_ctrl.l1_3 vccd1 vssd1 vccd1 vssd1",
+    "MACRO_PLACEMENT_CFG": "dir::macro_placement.cfg",
+    "EXTRA_LEFS": "pdk_dir::libs.ref/sky130_sram_macros/lef/sky130_sram_1kbyte_1rw1r_32x256_8.lef",
+    "EXTRA_GDS_FILES": "pdk_dir::libs.ref/sky130_sram_macros/gds/sky130_sram_1kbyte_1rw1r_32x256_8.gds",
+    "//EXTRA_VERILOG_MODELS": "pdk_dir::libs.ref/sky130_sram_macros/verilog/sky130_sram_1kbyte_1rw1r_32x256_8.v",
+    "EXTRA_LIBS": "pdk_dir::libs.ref/sky130_sram_macros/lib/sky130_sram_1kbyte_1rw1r_32x256_8_TT_1p8V_25C.lib",
+    "RUN_KLAYOUT_XOR": false,
+    "RUN_MAGIC_DRC": false,
+    "ERROR_ON_MAGIC_DRC": false,
+    "RUN_LINTER": false,
+    "RUN_TAP_ENDCAP_INSERTION": true,
+    "SYNTH_POWER_DEFINE": "USE_POWER_PINS",
+    "SYNTH_HIERARCHY_MODE": "deferred_flatten",
+
+    "RUN_ANTENNA_CHECK": true,
+    "RUN_ANTENNA_REPAIR": true,
+    "GRT_ANTENNA_ITERS": 100,
+    "GRT_ANTENNA_MARGIN": 25,
+    "RUN_HEURISTIC_DIODE_INSERTION": true,
+
+
+
+    "MAX_TRANSITION_CONSTRAINT": 1.5,
+    "DESIGN_REPAIR_MAX_SLEW_PCT": 50,
+    "DESIGN_REPAIR_MAX_CAP_PCT": 30,
+    "DEFAULT_CORNER": "max_ss_100C_1v60",
+
+    "MACROS": {
+        "alu": {
+            "gds": [
+                "dir::alu/final_design/gds/alu.gds"
+            ],
+            "lef": [
+                "dir::alu/final_design/lef/alu.lef"
+            ],
+            "nl": [
+                "dir::alu/final_design/nl/alu.nl.v"
+            ],
+            "pnl": [
+                "dir::alu/final_design/pnl/alu.pnl.v"
+            ],
+            "spef": {
+                "min_*": [
+                    "dir::alu/final_design/spef/min/alu.min.spef"
+                ],
+                "nom_*": [
+                    "dir::alu/final_design/spef/nom/alu.nom.spef"
+                ],
+                "max_*": [
+                    "dir::alu/final_design/spef/max/alu.max.spef"
+                ]
+            },
+            "lib": {
+                "*": "dir::alu/final_design/lib/*/alu_*.lib"
+            }
+        },
+        "register_file": {
+            "gds": [
+                "dir::register_file/final_design/gds/register_file.gds"
+            ],
+            "lef": [
+                "dir::register_file/final_design/lef/register_file.lef"
+            ],
+            "nl": [
+                "dir::register_file/final_design/nl/register_file.nl.v"
+            ],
+            "pnl": [
+                "dir::register_file/final_design/pnl/register_file.pnl.v"
+            ],
+            "spef": {
+                "min_*": [
+                    "dir::register_file/final_design/spef/min/register_file.min.spef"
+                ],
+                "nom_*": [
+                    "dir::register_file/final_design/spef/nom/register_file.nom.spef"
+                ],
+                "max_*": [
+                    "dir::register_file/final_design/spef/max/register_file.max.spef"
+                ]
+            },
+            "lib": {
+                "*": "dir::register_file/final_design/lib/*/register_file_*.lib"
+            }
+        }
+    }
+}

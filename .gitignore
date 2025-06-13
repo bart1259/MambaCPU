@@ -1,0 +1,4 @@
+obj_dir
+runs
+*.vcd
+json_h
