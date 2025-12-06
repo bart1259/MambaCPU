@@ -1,12 +1,12 @@
 # Mamba CPU Core
 
-This repo contains the Verilog source code for the Mamba CPU core which is a custom 32-bit CPU. Using OpenLane2 and Sky130 PDK, the CPU can be synthesized and placed into an ASIC design flow. The CPU is designed to be simple and expandable.
+This repo contains the Verilog source code for the "Mamba CPU core" which is a custom 32-bit CPU. Using OpenLane2 and Sky130 PDK, the CPU can be synthesized and placed into an ASIC design flow. The CPU is designed to be simple and expandable.
 
 ![OpenRoad](docs/OpenRoad.png "OpenRoad synthesis and place and route")
 
 ## Memory Controller
 
-The CPU has a memory controller featuring an L1 cache powered by LRU page eviction algorithm. The communication between CPU and memory is doing using a custom protocol and supports crossing clock domains (CPU + RAM can run on differnet clocks). The memory addresses index words (not the traditional bytes). The L1 cache supports four pages (256 words).
+The CPU has a memory controller which features an L1 cache powered by an LRU page eviction algorithm. The communication between CPU and memory is doing using a custom protocol which supports crossing clock domains (CPU + RAM can run on different clocks). There is a unique memory address for each word (not the traditional byte indexing). The L1 cache supports four pages (which are 256 words each). 
 
 ![RAM / CPU Communication protocol](docs/GTKWaveExample.png "RAM / CPU communication protocol visualized in GTKWave")
 
